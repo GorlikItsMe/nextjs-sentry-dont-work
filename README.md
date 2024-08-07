@@ -1,3 +1,34 @@
+# nextjs + sentry dont work
+
+For some reason sentry cant upload sourcemaps during buildtime. Because of that, you cant see the source code in the sentry dashboard.
+
+```bash
+# create a new nextjs project
+npx create-next-app 
+
+# install sentry
+npx @sentry/wizard@latest -i nextjs
+
+# add silent: false in next.config.mjs to see what is happening
+
+# Try build
+npm run build
+```
+
+And you will:
+
+```
+[@sentry/nextjs - Node.js] Info: Sending telemetry data on issues and performance to Sentry. To disable telemetry, set `options.telemetry` to `false`.
+[@sentry/nextjs - Node.js] Warning: Didn't find any matching sources for debug ID upload. Please check the `sourcemaps.assets` option.
+[@sentry/nextjs - Edge] Info: Sending telemetry data on issues and performance to Sentry. To disable telemetry, set `options.telemetry` to `false`.
+[@sentry/nextjs - Edge] Warning: Didn't find any matching sources for debug ID upload. Please check the `sourcemaps.assets` option.
+[@sentry/nextjs - Client] Info: Sending telemetry data on issues and performance to Sentry. To disable telemetry, set `options.telemetry` to `false`.
+[@sentry/nextjs - Client] Warning: Didn't find any matching sources for debug ID upload. Please check the `sourcemaps.assets` option.
+```
+
+-----------
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
