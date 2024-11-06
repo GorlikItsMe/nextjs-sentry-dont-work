@@ -1,3 +1,8 @@
+# Update: It works now
+https://github.com/getsentry/sentry-javascript/issues/13270
+
+---
+
 # nextjs + sentry dont work
 
 For some reason sentry cant upload sourcemaps during buildtime. Because of that, you cant see the source code in the sentry dashboard.
